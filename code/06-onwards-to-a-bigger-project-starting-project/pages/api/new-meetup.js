@@ -1,6 +1,7 @@
 //api/new-meetup
 // POST /api/new-meetup
 // mongodb+srv://<username>:<password>@mflix.ryh22.mongodb.net/?retryWrites=true&w=majority
+// mongodb+srv://<username>:<password>@mflix.ryh22.mongodb.net/?retryWrites=true&w=majority
 //mongodb+srv://nextStudent:next220@mflix.ryh22.mongodb.net/?retryWrites=true&w=majority
 // const username = encodeURIComponent("<username>");
 // const password = encodeURIComponent("<password>");
@@ -19,6 +20,8 @@ async function hendler(rec, res){
 
         const meetupsCollection = db.collection('meetups');
         const result = await meetupsCollection.insertOne({data});
+
+        console.log(result);
 
         client.close();
 
