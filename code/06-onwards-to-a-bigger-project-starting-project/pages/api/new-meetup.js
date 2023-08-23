@@ -10,12 +10,15 @@
 
 import { MongoClient } from "mongodb";
 
-async function hendler(rec, res){
+async function hendler(req, res){
     if(req.method === 'POST'){
         const data = req.body;
 
         const {title, image, address, description } = data;
-        const client = await MongoClient.connect('mongodb+srv://nextStudent:next220@mflix.ryh22.mongodb.net/meetups?retryWrites=true&w=majority');
+        
+        const client = await MongoClient.connect(
+            'mongodb+srv://nextStudent:next220@mflix.ryh22.mongodb.net/meetups?retryWrites=true&w=majority'
+            );
         const db = client.db();
 
         const meetupsCollection = db.collection('meetups');
