@@ -1,6 +1,8 @@
 // import { useEffect, useState } from 'react';
+import Head from 'next/head';
 import { MongoClient } from 'mongodb';
 import MeetupList from '../components/meetups/MeetupList';
+import { Fragment } from 'react';
 
 const DUMMY_MEETUPS = [
   { id: 'm1',
@@ -17,20 +19,19 @@ const DUMMY_MEETUPS = [
   }
 ];
 
-function Home(props) {
-  // const [loadedMeetups, setLoadedMeetups] = useState([]);
-
-  // useEffect(() => {
-  //   // fetch data from server
-  //   setLoadedMeetups(DUMMY_MEETUPS);
-  // }, []);
+function Home(props) {  
 
   return (
-    <>
-      {/* <h1>Home Page. Hello, Next! </h1> */}      
-        {/* <MeetupList meetups={loadedMeetups} />      */}
-        <MeetupList meetups={props.meetups} />     
-    </>
+    <Fragment>
+      <Head>
+        <title>React Meetups</title>
+        <meta
+          name="description"
+          content="Brows a hudge list of React Meetups"
+        />
+      </Head>
+      <MeetupList meetups={props.meetups} />
+    </Fragment>
   );
 }
 
