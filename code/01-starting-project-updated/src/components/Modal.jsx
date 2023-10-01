@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import {} from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function Modal({ title, children, onClose }) {
   return createPortal(
