@@ -61,7 +61,7 @@ export default function NewChallenge({ onDone }) {
           {images.map((image) => (
             <motion.li
               variants={{
-                hidden: { opacity: 0, scale: 1 },
+                hidden: { opacity: 0, scale: 0.5 },
                 visible: { opacity: 1, scale: 1 }
               }}
               exit={{ opacity: 1, scale: 1 }}
