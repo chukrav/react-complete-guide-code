@@ -34,5 +34,17 @@ describe('Greeting component', () => {
         
     });
 
+    test('does notrender "good to see you" if the Btn was clicked', () => {
+        render(<Greeting /> );
+
+        const buttonElement = screen.getByRole('button');
+        userEvent.click(buttonElement);
+
+        // Assert
+        const outputElement = screen.queryByText('good to see you',{exact: false}) ;
+        // expect(outputElement).not.toBeInTheDocument();
+        expect(outputElement).toBeNull();
+    });
+
 });
 
